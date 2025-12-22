@@ -3,34 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEDUCA - Servicios Educacionales Sistematizados</title>
+    <title>SEDUCA - Gestión Inteligente para la Excelencia Escolar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1a2a6c;
-            --secondary: #b21f1f;
-            --accent: #fdbb2d;
-            --light: #f4f7f6;
-            --dark: #2c3e50;
-            --success: #27ae60;
+            --primary: #0a2e36;    /* Gris muy oscuro/petróleo del logo */
+            --accent: #26c2b9;     /* Cian brillante del logo */
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #333;
         }
 
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header y Logo */
+        header {
+            background: var(--white);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo-img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .lema {
+            font-style: italic;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 10px;
         }
 
         /* Navegación */
         nav {
             background: var(--primary);
-            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         nav ul {
@@ -39,201 +56,163 @@
             justify-content: center;
             flex-wrap: wrap;
             margin: 0;
-            padding: 0;
+            padding: 10px 0;
         }
 
-        nav ul li { margin: 0 15px; }
+        nav ul li { margin: 5px 15px; }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         nav ul li a:hover { color: var(--accent); }
 
-        /* Encabezado */
-        header {
-            background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        /* Contenido */
+        /* Contenedor General */
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
-            min-height: 60vh;
         }
 
         .tab-content { display: none; animation: fadeIn 0.5s; }
         .active { display: block; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        /* Estilos de Tarjetas y Secciones */
         .card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--primary);
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border-top: 4px solid var(--accent);
         }
 
-        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
-        .highlight { color: var(--secondary); font-weight: bold; }
+        h2 { color: var(--primary); }
 
-        .btn {
+        .btn-social {
             display: inline-block;
-            background: var(--success);
+            background: #ff0000;
             color: white;
-            padding: 12px 25px;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 30px;
-            margin-top: 15px;
-            transition: transform 0.2s;
+            border-radius: 5px;
+            margin-top: 10px;
         }
-
-        .btn:hover { transform: scale(1.05); }
 
         footer {
-            background: var(--dark);
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
+            padding: 30px;
+            margin-top: 50px;
         }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>SEDUCA</h1>
-        <p>Servicios Educacionales Sistematizados</p>
-    </header>
+<header>
+    <img src="logo.jpg" alt="Logo SEDUCA" class="logo-img">
+    <div class="lema">"Gestión inteligente para la excelencia escolar."</div>
+</header>
 
-    <nav>
-        <ul>
-            <li><a onclick="showTab('quienes-somos')">¿Quiénes somos?</a></li>
-            <li><a onclick="showTab('individuales')">Asistentes Individuales</a></li>
-            <li><a onclick="showTab('colegios')">Asistentes Colegios</a></li>
-            <li><a onclick="showTab('sima')">SIMA</a></li>
-            <li><a onclick="showTab('capacitaciones')">Capacitaciones</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a onclick="showTab('inicio')">¿Quiénes Somos?</a></li>
+        <li><a onclick="showTab('individuales')">Asistentes Individuales</a></li>
+        <li><a onclick="showTab('colegios')">Asistentes Colegios</a></li>
+        <li><a onclick="showTab('sima')">SIMA</a></li>
+        <li><a onclick="showTab('capacitaciones')">Capacitaciones</a></li>
+        <li><a onclick="showTab('contacto')">Contacto</a></li>
+    </ul>
+</nav>
 
-    <div class="container">
-        
-        <section id="quienes-somos" class="tab-content active">
-            <div class="card">
-                <h2>Nuestra Misión</h2>
-                <p>Nuestra misión es revolucionar la gestión educativa mediante la integración de Inteligencia Artificial de vanguardia, eliminando la carga administrativa burocrática para que los educadores puedan centrarse en su verdadera vocación: inspirar y guiar el aprendizaje de sus estudiantes.</p>
-            </div>
-            <div class="card">
-                <h2>Nuestra Visión</h2>
-                <p>Ser el referente líder en Latinoamérica en la sistematización de procesos escolares, transformando los colegios en ecosistemas inteligentes donde los datos y la tecnología aseguren una educación de excelencia, justa y eficiente para todos.</p>
-            </div>
-        </section>
+<div class="container">
+    
+    <section id="inicio" class="tab-content active">
+        <div class="card">
+            <h2>Perfil Institucional</h2>
+            <p><strong>Servicios Educacionales Sistematizados (SEDUCA)</strong> es una empresa chilena de vanguardia tecnológica dedicada a redefinir la gestión escolar a través de la Inteligencia Artificial aplicada. Nuestra misión es clara: liberar a las instituciones educativas de la carga burocrática y administrativa, permitiendo que los equipos directivos y docentes vuelvan a enfocarse en su propósito esencial: la formación de excelencia de sus estudiantes.</p>
+            <p>Entendemos los desafíos actuales del sistema educativo: alta fiscalización normativa, agobio laboral docente y la presión por resultados académicos. Para abordarlos, hemos desarrollado un ecosistema integral de gestión inteligente basado en tres pilares estratégicos:</p>
+            <ul>
+                <li><strong>Seguridad y Convivencia (ARI):</strong> Un asistente especializado en el blindaje normativo que automatiza la aplicación de protocolos y reglamentos internos.</li>
+                <li><strong>Excelencia Pedagógica (APP):</strong> Una herramienta de diseño instruccional que estandariza la calidad educativa y genera material en segundos.</li>
+                <li><strong>Inteligencia de Resultados (SIMA):</strong> Un motor de análisis predictivo para planes de mejora continua y retroalimentación específica.</li>
+            </ul>
+            <p>En SEDUCA construimos el "Triángulo de Hierro" de la gestión escolar: Seguridad, Calidad y Resultados.</p>
+        </div>
+    </section>
 
-        <section id="individuales" class="tab-content">
-            <h2>APP: Licencia para Docentes</h2>
-            <div class="card">
-                <p><strong>APP (Asistente de Planificación Pedagógica)</strong> para usuarios individuales está diseñado para el profesor que busca recuperar su tiempo personal y elevar su impacto en el aula.</p>
-                <ul>
-                    <li>Generación ilimitada de planificaciones clase a clase.</li>
-                    <li>Creación de guías teóricas y prácticas personalizadas.</li>
-                    <li>Diseño de evaluaciones y rúbricas automáticas.</li>
-                    <li>Adaptación a cualquier asignatura y nivel educativo.</li>
-                </ul>
-                <p class="highlight">Recupera hasta 15 horas mensuales de trabajo administrativo.</p>
-                <a href="#" class="btn">Adquirir Licencia Individual</a>
-            </div>
-        </section>
+    <section id="individuales" class="tab-content">
+        <div class="card">
+            <h2>APP para Docentes (Uso Individual)</h2>
+            <p>Optimiza tu tiempo profesional. APP permite especificar y especializar el contenido para cualquier asignatura o nivel, generando planificaciones, guías y evaluaciones de alta calidad al instante.</p>
+        </div>
+    </section>
 
-        <section id="colegios" class="tab-content">
-            <h2>Soluciones para Establecimientos (Convenio SEP)</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>ARI: Asistente de Reglamento Interno</h3>
-                    <p>El blindaje normativo que su institución necesita. ARI automatiza la gestión de convivencia, clasificando faltas y activando protocolos (RI, PISE, PEI) de forma inmediata y legalmente justificada.</p>
-                    <ul>
-                        <li>Anotaciones para el libro de clases listas para copiar.</li>
-                        <li>Correos automáticos a apoderados y directivos.</li>
-                        <li>Registro histórico y trazabilidad de estudiantes.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>APP: Estandarización Pedagógica</h3>
-                    <p>Asegure la excelencia académica en todo el plantel. APP para colegios permite estandarizar la calidad de las planificaciones y materiales de todos los departamentos educativos.</p>
-                    <ul>
-                        <li>Alineación total al Decreto 67 y currículum nacional.</li>
-                        <li>Transversalidad en comprensión lectora.</li>
-                        <li>Material de alta calidad para todos los niveles.</li>
-                    </ul>
-                </div>
-            </div>
-            <center><a href="#" class="btn" style="background:var(--primary)">Solicitar Cotización Institucional</a></center>
-        </section>
+    <section id="colegios" class="tab-content">
+        <div class="card">
+            <h2>Soluciones Institucionales (Convenio SEP)</h2>
+            <h3>ARI: Asistente de Reglamento Interno</h3>
+            <p>Automatización de convivencia escolar con blindaje normativo. Decisiones coherentes basadas en el RI, PISE y PEI de su establecimiento.</p>
+            <h3>APP: Estandarización Pedagógica</h3>
+            <p>Gestión curricular completa bajo el Decreto 67, asegurando excelencia en todos los departamentos del colegio.</p>
+        </div>
+    </section>
 
-        <section id="sima" class="tab-content">
+    <section id="sima" class="tab-content">
+        <div class="card">
             <h2>SIMA: Inteligencia de Resultados</h2>
-            <div class="card">
-                <p><strong>SIMA (Sistema de Inteligencia y Monitoreo de Aprendizajes)</strong> es nuestra solución de analítica avanzada enfocada en resultados de alto impacto (SIMCE).</p>
-                <p>Este servicio implementa un ciclo de 6 ensayos anuales con procesamiento de datos en tiempo real. Analiza variables críticas como habilidades, ejes temáticos, niveles de dificultad e incluso el impacto del evaluador.</p>
-                <p><strong>Lo que obtendrá:</strong></p>
-                <ul>
-                    <li>Informes detallados por estudiante, curso y nivel.</li>
-                    <li>Detección de brechas de aprendizaje específicas.</li>
-                    <li>Generación automática de clases de retroalimentación basadas en los errores detectados.</li>
-                    <li>Material de nivelación personalizado para cada ciclo.</li>
-                </ul>
-                <p class="highlight">Transforme los datos en una ruta clara hacia la excelencia académica.</p>
-            </div>
-        </section>
+            <p>Transformamos datos de ensayos SIMCE y evaluaciones internas en estrategias de mejora. Análisis por eje, habilidad e indicador para una retroalimentación específica que cierra brechas de aprendizaje de forma efectiva.</p>
+        </div>
+    </section>
 
-        <section id="capacitaciones" class="tab-content">
+    <section id="capacitaciones" class="tab-content">
+        <div class="card">
             <h2>Programas de Capacitación</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>1. Uso Efectivo de IA para Docentes</h3>
-                    <p>Capacitación práctica orientada a que los profesores dominen las herramientas de IA generativa. El enfoque es reducir el agobio laboral y mejorar el diseño de actividades interactivas y motivadoras.</p>
-                </div>
-                <div class="card">
-                    <h3>2. Análisis de Datos para el Éxito en SIMCE</h3>
-                    <p>Taller especializado en la recopilación y análisis de datos para la toma de decisiones. Enseñamos a los equipos UTP y docentes a interpretar resultados para ajustar la enseñanza a los Estándares de Aprendizaje nacionales.</p>
-                </div>
-            </div>
-        </section>
+            <ul>
+                <li><strong>Uso efectivo de IA para docentes:</strong> Productividad y diseño de aula.</li>
+                <li><strong>Análisis de datos para toma de decisiones:</strong> Enfoque en SIMCE y estándares de aprendizaje.</li>
+            </ul>
+        </div>
+    </section>
 
-    </div>
+    <section id="contacto" class="tab-content">
+        <div class="card">
+            <h2>Contacto y Cotizaciones</h2>
+            <p>Para consultas sobre nuestros servicios o solicitar una cotización institucional, contáctenos directamente:</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> contacto.seduca@gmail.com</p>
+            <hr>
+            <h3>Síguenos en Youtube</h3>
+            <p>Conoce nuestros tutoriales y ejemplos de uso de nuestros asistentes:</p>
+            <a href="https://www.youtube.com/@SES.SEDUCA" target="_blank" class="btn-social">
+                <i class="fab fa-youtube"></i> Visitar Canal SEDUCA
+            </a>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 SEDUCA - Servicios Educacionales Sistematizados</p>
-        <p><i class="fas fa-envelope"></i> contacto@seduca.cl</p>
-    </header>
+</div>
 
-    <script>
-        function showTab(tabId) {
-            // Ocultar todos los contenidos
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-            
-            // Mostrar la pestaña seleccionada
-            document.getElementById(tabId).classList.add('active');
-            
-            // Subir al inicio de la página suavemente
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-    </script>
+<footer>
+    <p>&copy; 2025 SEDUCA - Servicios Educacionales Sistematizados</p>
+    <p>Contacto: contacto.seduca@gmail.com</p>
+</footer>
+
+<script>
+    function showTab(tabId) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
 </body>
 </html>
