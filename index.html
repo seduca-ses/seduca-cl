@@ -87,6 +87,17 @@
             min-height: 60vh;
         }
 
+        /* Efecto Hover para imágenes */
+        .img-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .img-hover:hover {
+            transform: scale(1.05); /* Amplía la imagen un 5% */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Intensifica la sombra */
+        }
+
         .tab-content { display: none; animation: fadeIn 0.5s; }
         .active { display: block; }
 
@@ -187,7 +198,10 @@
             <h2>APP: Licencia para Docentes</h2>
             <div class="card">
                 <div style="text-align: center; margin-bottom: 20px;">
-                    <img src="app-docentes.png" alt="Asistente APP para Profesores" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="app-docentes.png" 
+                         alt="Asistente APP para Profesores" 
+                         class="img-hover" 
+                         style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 </div>
 
                 <p><strong>APP (Asistente de Planificación Pedagógica)</strong> para usuarios individuales está diseñado para el profesor que busca recuperar su tiempo personal y elevar su impacto en el aula. Se puede especificar y especializar para cualquier asignatura o nivel.</p>
