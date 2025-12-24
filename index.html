@@ -155,6 +155,33 @@
             margin-top: 60px;
         }
 
+        /* Estilo para imágenes circulares del equipo */
+        .img-equipo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%; /* Hace la imagen circular */
+            border: 4px solid var(--accent);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .img-equipo:hover {
+            transform: scale(1.1);
+        }
+
+        .perfil-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .perfil-cv {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     </style>
 </head>
@@ -168,6 +195,7 @@
     <nav>
         <ul>
             <li><a onclick="showTab('quienes-somos')">¿Quiénes somos?</a></li>
+            <li><a onclick="showTab('equipo')">Equipo</a></li>
             <li><a onclick="showTab('individuales')">Asistentes Individuales</a></li>
             <li><a onclick="showTab('colegios')">Asistentes Colegios</a></li>
             <li><a onclick="showTab('sima')">SIMA</a></li>
@@ -191,6 +219,19 @@
             <div class="card">
                 <h2>Nuestra Visión</h2>
                 <p>Ser el referente líder en Latinoamérica en la sistematización de procesos escolares, transformando los colegios en ecosistemas inteligentes donde los datos y la tecnología aseguren una educación de excelencia.</p>
+            </div>
+        </section>
+
+        <section id="equipo" class="tab-content">
+            <div class="card perfil-container">
+                <img src="aris-reyes.jpg" alt="Aris Reyes" class="img-equipo">
+                
+                <h2 style="border:none; margin-bottom:5px;">Aris Reyes</h2>
+                <p style="font-weight: bold; color: var(--secondary); margin-bottom: 20px;">Director Ejecutivo</p>
+                
+                <div class="perfil-cv">
+                    <p>Profesor Enseña Chile, Ingeniero Civil Mecánico, Magister en Ingeniería Industrial, Diplomados en: Ciencia de datos, Emprendimiento y liderazgo, Metodologías activas con inteligencia artificial y habilidades digitales, Gestión de la producción y operaciones de las organizaciones.</p>
+                </div>
             </div>
         </section>
 
