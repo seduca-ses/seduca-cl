@@ -182,7 +182,12 @@
             line-height: 1.8;
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            align-items: stretch;
+        }
     </style>
 </head>
 <body>
@@ -233,6 +238,15 @@
                     <p>Profesor Enseña Chile, Ingeniero Civil Mecánico, Magister en Ingeniería Industrial, Diplomados en: Ciencia de datos, Emprendimiento y liderazgo, Metodologías activas con inteligencia artificial y habilidades digitales, Gestión de la producción y operaciones de las organizaciones.</p>
                 </div>
             </div>
+
+            <div class="card perfil-container">
+                    <img src="cristobal-garcia.png" alt="Cristóbal García" class="img-equipo">
+                    <h2 style="border:none; margin-bottom:5px;">Cristóbal García</h2>
+                    <p style="font-weight: bold; color: var(--secondary); margin-bottom: 20px;">Coordinador de Proyectos</p>
+                    <div class="perfil-cv">
+                        <p>Licenciado en Filosofía y Educación, Diplomado en Aprendizaje Basado en Proyectos (ABP) y Bioética.</p>
+                    </div>
+                </div>
         </section>
 
         <section id="individuales" class="tab-content">
